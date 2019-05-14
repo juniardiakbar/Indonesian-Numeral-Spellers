@@ -10,12 +10,14 @@ class App extends Component {
   }
 
   ejaClick(){
+    //GET
     axios.get('http://0.0.0.0:8080/spell?number='+document.getElementById("eja").value,{  crossDomain: true
     }).then(response => document.getElementById("result").innerHTML = 
       "<span>Hasil Pengejaan</span> = "+response.data.text)
   }
 
   bacaClick(){
+    //POST
     axios.post('http://0.0.0.0:8080/read?text='+document.getElementById("baca").value,{
       crossDomain: true
     }).then(response => document.getElementById("result").innerHTML = 
