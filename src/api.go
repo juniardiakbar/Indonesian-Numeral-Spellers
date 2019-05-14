@@ -9,6 +9,7 @@ import (
 )
 
 func ratusan(q int) string{
+	// Fungsi akan mengkonvert bilangan secara tiga digit
 	num := [12]string{"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"} 
 	if (q < 12){
 		return num[q]
@@ -51,6 +52,7 @@ func convert(q int, l int) string{
 	var spell = ""
 	var i = 0
 	for (q > 0){
+		// Pengejaan dilakukan per tiga digit
 		if (i==1 && temp==1){
 			spell = "seribu " + spell 
 		} else{
@@ -134,6 +136,7 @@ func conv(x string) int{
 }
 
 func cekValid(x []string) int{
+	// Fungsi akan engecek apakah suatu text valid
 	var i = 0
 	for (i<len(x)){
 		if (i+1<len(x)){
@@ -224,6 +227,7 @@ func read(c *gin.Context) {
 		for (i<len(s)) {
 			var ribu = 0
 			for (s[i] != "ribu" && s[i] != "juta" && s[i] != "miliyar"){
+				// Pembacaan dilakukan per tiga digit (sampai ditemukan kata ribu, juta, atau miliyar)
 				var temp = 0
 				temp = temp + toInt(s[i])
 				i = i+1
