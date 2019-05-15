@@ -6,6 +6,7 @@
 2. API is made with **Go** and using **github.com/gin-gonic/gin**, **github.com/gin-contrib/cors**
 
 3. Response given in JSON with format:
+
 **GET**
 Response :
 ```
