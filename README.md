@@ -83,7 +83,7 @@ Response :
 - Run React.js App by typing **"npm start"** in numeral_spellers directory in terminal
 - App will running in localhost:3000/
 
-## Uji Coba App React JS
+## React JS App Testing
 ### Test Case 1 : Spell
 ![alt text](https://raw.githubusercontent.com/juniardiakbar/Indonesian-Numeral-Spellers/master/pict/5.jpg)
 ### Test Case 2 : Read
