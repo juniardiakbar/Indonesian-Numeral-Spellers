@@ -5,23 +5,23 @@ import axios from 'axios'
 class App extends Component {
   constructor(){
     super()
-    this.ejaClick = this.ejaClick.bind(this)
-    this.bacaClick = this.bacaClick.bind(this)
+    this.spellClick = this.spellClick.bind(this)
+    this.readClick = this.readClick.bind(this)
   }
 
-  ejaClick(){
+  spellClick(){
     //GET
-    axios.get('http://0.0.0.0:8080/spell?number='+document.getElementById("eja").value,{  crossDomain: true
+    axios.get('http://0.0.0.0:8080/spell?number='+document.getElementById("spell").value,{  crossDomain: true
     }).then(response => document.getElementById("result").innerHTML = 
-      "<span>Hasil Pengejaan</span> = "+response.data.text)
+      "<span>Spell Result</span> = "+response.data.text)
   }
 
-  bacaClick(){
+  readClick(){
     //POST
-    axios.post('http://0.0.0.0:8080/read?text='+document.getElementById("baca").value,{
+    axios.post('http://0.0.0.0:8080/read?text='+document.getElementById("read").value,{
       crossDomain: true
     }).then(response => document.getElementById("result").innerHTML = 
-    "<span>Hasil Pembacaan</span> = "+response.data.number)
+    "<span>Read Result</span> = "+response.data.number)
   }
   
   render() {
@@ -31,20 +31,20 @@ class App extends Component {
           <h2>Welcome to Indonesian Numeral Speller</h2>
         </div>
         <div className="App-container">
-          <div className="eja">
-            <h4>Pengejaan (angka ke teks)</h4>
-            <p> Masukkan angka yang valid contohnya 23, 245, 4587. Angka maksimum yang dapat diteima adalah 2 Miliyar</p>
+          <div className="spell">
+            <h4>Spelling (number to text)</h4>
+            <p>Insert valid number. Eg: 23, 245, 4587. Maximum number can handle is 2 billion</p>
             <form>
-              <input type="number" name="eja" placeholder="Masukkan angka" id="eja"></input>
-              <button id="eja-submit" onClick={this.ejaClick}>submit</button>
+              <input type="number" name="spell" placeholder="Insert number" id="spell"></input>
+              <button id="spell-submit" onClick={this.spellClick}>submit</button>
             </form>
           </div>
-          <div className="baca">
-            <h4>Pembacaan (teks ke angka)</h4>
-            <p> Masukkan teks yang valid. Pastikan tidak terjadi typo. Angka maksimum yang dapat diteima adalah 2 Miliyar</p>
+          <div className="read">
+            <h4>Reading (text to number)</h4>
+            <p>Insert valid text. Make sure there is no typo on it. Maximum number can handle is 2 billion</p>
             <form>
-              <input type="text" name="baca" placeholder="Masukkan teks" id="baca"></input>
-              <button id="baca-submit" onClick={this.bacaClick}>submit</button>
+              <input type="text" name="read" placeholder="Masukkan teks" id="read"></input>
+              <button id="read-submit" onClick={this.readClick}>submit</button>
             </form>
           </div>
           <div className="result" id="result" hidden>

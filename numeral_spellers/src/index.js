@@ -8,12 +8,12 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-document.getElementById("baca-submit").addEventListener("click", function(e){
+document.getElementById("read-submit").addEventListener("click", function(e){
   e.preventDefault();
   document.getElementById("result").removeAttribute("hidden");
 })
 
-document.getElementById("eja-submit").addEventListener("click", function(e){
+document.getElementById("spell-submit").addEventListener("click", function(e){
   e.preventDefault();
   document.getElementById("result").removeAttribute("hidden");
 })
